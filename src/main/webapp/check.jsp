@@ -9,7 +9,7 @@
 <body>
 
 	<jsp:useBean id="u" class="dealership.User" scope="session"></jsp:useBean> 
-	<!-- SET PROPERTY, IF * then it will take all properties--> 
+
 	<jsp:setProperty property="*" name="u"/>  
 	 
 	<jsp:forward page="Loginservlet" /> 

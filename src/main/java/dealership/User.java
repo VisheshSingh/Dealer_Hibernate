@@ -1,8 +1,12 @@
 package dealership;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "login_details")
 public class User {
 
 	@Id

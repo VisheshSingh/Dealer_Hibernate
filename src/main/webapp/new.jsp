@@ -8,5 +8,6 @@
 </head>
 <body>
 New user added! Check the DB.
+<a href="index.html">Login</a>
 </body>
 </html>

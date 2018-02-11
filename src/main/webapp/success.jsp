@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Success! LOGIN</title>
 </head>
 <body>
 	<jsp:useBean id="u" class="dealership.User" scope="session"></jsp:useBean>
-	Hi, <jsp:getProperty property="username" name="u"/>
+	Hi, <jsp:getProperty property="username" name="u"/><br/>
 	You are logged in!
+	<form action="Carservlet" method="post">
+		If you like to see cars<br/>
+		<input type="submit" value="Visit Catalog"/>
+	</form>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package dealership;
 
+import java.util.ArrayList;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -72,9 +74,6 @@ public class UserDAO {
 					res = true;
 				}
 
-			// save the student object
-			/* session.save(newUser); */
-
 			// commit the transaction
 			session.getTransaction().commit();
 
@@ -86,5 +85,33 @@ public class UserDAO {
 			factory.close();
 		}
 		return res;
+	}
+
+	public ArrayList<Car> getCars() {
+		ArrayList<Car> carlist = new ArrayList<Car>();
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Car.class)
+				.buildSessionFactory();
+
+		// create a session
+		Session session = factory.getCurrentSession();
+		try {
+
+			// Start a transaction
+			session.beginTransaction();
+			// Save the list of cars to Arraylist: Query result is saved in the form of list
+			carlist = (ArrayList<Car>) session.createQuery("FROM Car").list();
+
+			// commit the transaction
+			session.getTransaction().commit();
+
+			System.out.println("Done!");
+		} catch (HibernateException e) {
+			System.out.println(e.getMessage());
+			System.out.println("error");
+		} finally {
+			factory.close();
+		}
+
+		return carlist;
 	}
 }

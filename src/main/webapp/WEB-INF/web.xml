@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>dealership.Loginservlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Carservlet</servlet-name>
+  	<display-name>Carservlet</display-name>
+  	<description></description>
+  	<servlet-class>dealership.Carservlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Frontservlet</servlet-name>
   	<url-pattern>/Frontservlet</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>Loginservlet</servlet-name>
   	<url-pattern>/Loginservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Carservlet</servlet-name>
+  	<url-pattern>/Carservlet</url-pattern>
   </servlet-mapping>
 </web-app>
